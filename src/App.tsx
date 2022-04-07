@@ -19,6 +19,7 @@ function App() {
           Learn React
         </a>
       </header>
+      <h3>This is added after the app is created</h3>
     </div>
   );
 }
