@@ -1,6 +1,7 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import App from './App';
+import Button from './components/Button.component';
 
 test('renders learn react link', () => {
   render(<App />);
@@ -13,6 +14,11 @@ test('renders learn react link', () => {
   expect(customizedContent).toBeInTheDocument();
 });
 
-test('Another global test method', () => {
-  console.log('Another global test method');
-});
+test('Init Button', () => {
+  render(<Button buttonText='Init Button' />)
+  const initButton = screen.getByRole('button');
+  expect(initButton).toHaveTextContent('Init Button');
+  expect(initButton).toHaveStyle({
+    color: 'blueviolet'
+  })
+})
